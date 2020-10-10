@@ -39,7 +39,7 @@ What kind of color blindness do you want? (enter number)
 
 ### Variables and Data Types
 
-The program accepts 3 `int`s between 0-255 to represent the input color values. `Int` was chosen because GRB values are whole numbers. The program also accepts an additional `int` between 1 and 4 (inclusive) to choose which "filter" to use. Filters:
+The program accepts 3 `int`s between 0-255 to represent the input color values. `Int` was chosen because RGB values are whole numbers. The program also accepts an additional `int` between 1 and 4 (inclusive) to choose which "filter" to use. Filters:
 ```
 1. Monochromaticity - total color blindness.
 2. Deuteranomaly - lack of ability to see green
