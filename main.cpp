@@ -1,6 +1,6 @@
 #include <iostream>
-#include "libraries/bitmap.h"
 #include <cmath>
+#include "libraries/bitmap.h" //library that adds pixels/bitmaps
 
 using namespace std;
 
@@ -11,19 +11,19 @@ int main()
   int errCnt = 0;
 
   do{
-  cout << "Enter red value: ";
+  cout << "Enter red value (0-255): ";
   cin >> pixIn.red;
   }
   while( pixIn.red > 255 || pixIn.red < 0 ); //check to make sure it's within range
 
   do{
-  cout << "Enter green value: ";
+  cout << "Enter green value (0-255): ";
   cin >> pixIn.green;
   }
   while( pixIn.green > 255 || pixIn.green < 0 ); //check to make sure it's within range
 
   do{
-  cout << "Enter blue value: ";
+  cout << "Enter blue value (0-255): ";
   cin >> pixIn.blue;
   }
   while( pixIn.blue > 255 || pixIn.blue < 0 ); //check to make sure it's within range
@@ -66,7 +66,7 @@ int main()
     pixOut.green = pixIn.green;
     pixOut.blue = pixIn.blue;
   }
-  else {
+  else if( type == 4) {
     //do tritanopia
     pixOut.red = pixIn.red;
     pixOut.green = pixIn.blue;
@@ -77,3 +77,29 @@ int main()
 
   return 0;
 }
+
+
+
+
+/*
++@##########M/             :@#########@/
+ ##############$;H#######@;+#############
+ ###############M########################
+ ##############X,-/++/+%+/,%#############
+ ############M$:           -X############
+ ##########H;.      ,--.     =X##########
+ :X######M;     -$H@M##MH%:    :H#######@
+   =%#M+=,   ,+@#######M###H:    -=/M#%
+   %M##@+   .X##$, ./+- ./###;    +M##%
+   %####M.  /###=         @##M.   X###%
+   %####M.  ;M##H:.     =$###X.   $###%
+   %####@.   /####M$-./@#####:    %###%
+   %H#M/,     /H###########@:     ./M#%
+  ;$H##@@H:    .;$HM#MMMH$;,   ./H@M##M$=
+ X#########%.      ..,,.     .;@#########
+ ###########H+:.           ./@###########
+ ##############/ ./%%%%+/.-M#############
+ ##############H$@#######@@##############
+ ##############X%########M$M#############
+ +M##########H:            .$##########X=
+ */
