@@ -50,11 +50,11 @@ The program outputs 3 `ints` for the adjusted color values.
 
 ### Input and Output
 
-!!!Replace with a summary and examples of how input and output have been used effectively and appropriately!!!
+This program accepts 3 `int`s representing the valuse of 3 colors: red, green, and blue. The inputs must be between 0 and 255. The program also accepts an addition `int` specifying which filter to apply.
 
 ### Decisions
 
-This program uses `if` statements to do different behaviors based on what filter the user chooses.
+This program uses `if` and `else if` statements to ensure the correct filter gets applied to the input values.
 
 ### Iteration
 
@@ -62,4 +62,4 @@ This program makes use of `do while` loops to verify inputs and ensure they are 
 
 ### File Input and Output
 
-!!!Replace with a summary and examples of how input and/or output of files have been used effectively and appropriately!!!
+This program does not input or output any files due to ~~layoffs~~ ~~budget cuts~~ me being a lazy ass.
