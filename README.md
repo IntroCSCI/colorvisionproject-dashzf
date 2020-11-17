@@ -1,4 +1,4 @@
-# Colorblindness Image Filter-atron 2000
+# Colorblindness Image Filter-atron 2000 v2
 ## Description
 
 This program attemts to simulate four different types of colorblindness:
@@ -7,11 +7,7 @@ This program attemts to simulate four different types of colorblindness:
   3. Protanopia - complete lack of ability to see red.
   4. Tritanopia - lack of ability to see blue.
 
-
-## Description
-
-Takes RGB values and a filter type (Monochromaticity, Protanopia, Deuteranomaly, Tritanopia), outputs an adjusted value.
-RGB values should be 0-255, filter # should be 1-4.
+It takes a square .bmp image with 24 bit color depth eand a filter type (Monochromaticity, Protanopia, Deuteranomaly, Tritanopia), and outputs the adjusted image as `out.bmp`.
 
 ## Developer
 
@@ -29,65 +25,61 @@ g++ --std=c++11 main.cpp -o cvp
 Here is an example of the program running:
 
 ```
-Enter red value: 82 
-Enter green value: 96
-Enter blue value: 246
-=======
-Enter red value: 239
-Enter green value: 74
-Enter blue value: 127
+Please input an image (must be a square .bmp with 24 bit color depth, case sensitive): pixTest4.bmp
+
 
 What kind of color blindness do you want? (enter number)
 1. Monochromaticity - total color blindness.
 2. Deuteranomaly - lack of ability to see green
 3. Protanopia - complete lack of ability to see red.
 4. Tritanopia - lack of ability to see blue.
-3
+4
 
-9, 96, 246
-=======
-1
-
-146, 146, 146
+Processing...
+Done! Saved as out.bmp
 ```
 
 ## C++ Guide
 
 ### Variables and Data Types
 
-This program uses integers and the bitmap library's `pixel` datatype to process the supplied values.
-=======
-The program accepts 3 `int`s between 0-255 to represent the input color values. `Int` was chosen because GRB values are whole numbers. The program also accepts an additional `int` between 1 and 4 (inclusive) to choose which "filter" to use. Filters:
+This program primarily uses the bitmap library's `Pixel` and `Bitmap` datatypes to process the image. It also uses integers and strings to hold user input.
+
+The program accepts a string specifying the path to the image and an integer representing the desired filter. Filters:
 ```
 1. Monochromaticity - total color blindness.
 2. Deuteranomaly - lack of ability to see green
 3. Protanopia - complete lack of ability to see red.
 4. Tritanopia - lack of ability to see blue.
 ```
-The program outputs 3 `ints` for the adjusted color values.
+The program outputs a `.bmp` file called `out.bmp`
 
 ### Input and Output
 
-This program accepts 3 `int`s representing the valuse of 3 colors: red, green, and blue. The inputs must be between 0 and 255. The program also accepts an addition `int` specifying which filter to apply.
+The program accepts a string specifying the path to the image and an integer representing the desired filter. it outputs text displaying options and the current status of the program.
 
 ### Decisions
 
-This program uses `if` and `else if` statements to ensure the correct filter gets applied to the input values.
+This program uses `if` and `else if` statements to ensure the correct filter gets applied to the input values and check for errors.
 
 ### Iteration
 
-This program uses multiple `do while` loops to validate inputs are within acceptable parameters. 
+This program uses multiple `do while` loops to validate inputs are within acceptable parameters. It also uses `for` loops to proccess every pixel.
 
 ### File Input and Output
 
-This program does not input or output any files due to ~~layoffs~~ ~~budget cuts~~ me being a lazy ass.
-=======
-This program uses `if` statements to do different behaviors based on what filter the user chooses.
+This program accepts a square `.bmp` image with 24 bit color depth. It outputs a bmp of the same size with the name `out.bmp`.
 
-### Iteration
+### Arrays/Vectors
+This program uses a vector to store data of all of the pixels in the image for easy editing.
 
-This program makes use of `do while` loops to verify inputs and ensure they are inside the expected range.
+### Functions
+This program uses functions to simplify the main program and avoid having to duplicate text. For example, the `filterPixel` function, which accepts a `Pixel` and an `int`, applies the filter specified by the `int` to the `Pixel`.
 
-### File Input and Output
+## Disclaimer
+This colorblindness simulator has no basis in reality. I have no idea if this is what colorblind people actually see.
 
-!!!Replace with a summary and examples of how input and/or output of files have been used effectively and appropriately!!!
+## Changelog
+### V0.2
+* Added support for full images
+* Adjusted filtering method
