@@ -136,5 +136,5 @@ The monochormacity filter simply finds the average of all 3 RGB values and sets 
 * Added support for full images
 * Adjusted filtering method
 
-###V1
+### V1
 * New filtering method based on the algorithm by Lee and Pinheiro dos Santos for simulating colorblindness from their paper [An Adaptive Fuzzy-Based System to Simulate, Quantify and Compensate Color Blindness](https://arxiv.org/pdf/1711.10662.pdf). The new filter does not support Tritanopia.
