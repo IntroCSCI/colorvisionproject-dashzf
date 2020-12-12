@@ -1,2 +1,3 @@
 language = "cpp"
-run = "g++ -std=c++11 main.cpp -o cvp; ./cvp"
+
+run = "g++ -std=c++11 bitmap/bitmap.cpp *.cpp -o cvp; ./cvp"

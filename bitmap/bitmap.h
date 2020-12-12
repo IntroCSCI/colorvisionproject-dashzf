@@ -86,6 +86,6 @@ class Bitmap
     
 };
 
-#include "bitmap.cpp"
+//#include "bitmap.cpp"
 
 #endif
